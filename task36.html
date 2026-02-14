@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Online Exam Registration</title>
+
+    <!-- Embedded CSS -->
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1a73e8;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        input[type="text"], 
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        input[type="text"]:focus, 
+        input[type="email"]:focus {
+            border-color: #1a73e8;
+            outline: none;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-left: 10px;
+        }
+
+        .radio-group label, .checkbox-group label {
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .declaration {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
+
+        .error {
+            color: #d93025;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0d47a1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Online Examination Registration Form</h2>
+        <form id="registrationForm">
+
+            <div class="form-group">
+                <label for="name">Student Name *</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" />
+                <div class="error" id="nameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="example@domain.com" />
+                <div class="error" id="emailError"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Gender *</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" value="other"> Other</label>
+                </div>
+                <div class="error" id="genderError"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Subjects Interested In * (Select at least one)</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="subject" value="maths"> Mathematics</label>
+                    <label><input type="checkbox" name="subject" value="science"> Science</label>
+                    <label><input type="checkbox" name="subject" value="english"> English</label>
+                    <label><input type="checkbox" name="subject" value="computer"> Computer Science</label>
+                    <label><input type="checkbox" name="subject" value="history"> History</label>
+                </div>
+                <div class="error" id="subjectError"></div>
+            </div>
+
+            <div class="form-group declaration">
+                <label>
+                    <input type="checkbox" id="declaration" />
+                    I declare that all the information provided is correct and I agree to the terms and conditions. *
+                </label>
+                <div class="error" id="declarationError"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Registration</button>
+
+        </form>
+    </div>
+
+    <!-- External JS File -->
+    <script src="task36.js"></script>
+</body>
+</html>
