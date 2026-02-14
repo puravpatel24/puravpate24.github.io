@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Hotel Booking Form</title>
+
+    <!-- Embedded CSS -->
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1a73e8;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="tel"]:focus {
+            border-color: #1a73e8;
+            outline: none;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-left: 10px;
+        }
+
+        .radio-group label, .checkbox-group label {
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .terms {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
+
+        .error {
+            color: #d93025;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0d47a1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Hotel Booking Form</h2>
+        <form id="hotelForm">
+
+            <div class="form-group">
+                <label for="guestName">Guest Name *</label>
+                <input type="text" id="guestName" name="guestName" placeholder="Enter guest name" />
+                <div class="error" id="nameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="contact">Contact Number *</label>
+                <input type="tel" id="contact" name="contact" placeholder="Enter contact number" />
+                <div class="error" id="contactError"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Room Type *</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="roomType" value="deluxe"> Deluxe Room</label>
+                    <label><input type="radio" name="roomType" value="suite"> Suite</label>
+                    <label><input type="radio" name="roomType" value="executive"> Executive Room</label>
+                </div>
+                <div class="error" id="roomError"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Additional Services * (Select at least one)</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="services" value="breakfast"> Breakfast</label>
+                    <label><input type="checkbox" name="services" value="pickup"> Airport Pickup</label>
+                    <label><input type="checkbox" name="services" value="wifi"> Wi-Fi</label>
+                </div>
+                <div class="error" id="servicesError"></div>
+            </div>
+
+            <div class="form-group terms">
+                <label>
+                    <input type="checkbox" id="terms" />
+                    I agree to the Terms and Conditions *
+                </label>
+                <div class="error" id="termsError"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Booking</button>
+
+        </form>
+    </div>
+
+    <script src="task37.js"></script>
+</body>
+</html>
